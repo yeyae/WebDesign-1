@@ -56,6 +56,17 @@
         line-height: 40px;
         position: relative;
       }
+
+      nav a#trigger::after {
+        content: "";
+        background: url("dog.png") no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -70,5 +81,16 @@
         <li><a href="#">MENU</a></li>
       </ul>
     </nav>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+      $(function () {
+        var trigger = $("#trigger");
+        var menu = $("nav ul");
+        $(trigger).on("click", function (e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+      });
+    </script>
   </body>
 </html>
